@@ -1,0 +1,4 @@
+import {<tmp_ModelName>Collection as <tmp_ModelName>CollectionBase} from './base/index';
+
+export class <tmp_ModelName>Collection extends <tmp_ModelName>CollectionBase {
+}

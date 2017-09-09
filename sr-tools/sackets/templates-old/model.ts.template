@@ -1,0 +1,195 @@
+import {Predicate, ModelFilter, ModelFilterBase, ModelSort, ModelWith, ModelValues, ModelProperty, SortModifier, Model, ModelCollection} from 'sackets';
+import {<tmp.ModelName> as <tmp.ModelName>Sub} from '../index';
+import {<tmp.ModelName>Collection as <tmp.ModelName>CollectionSub} from '../index';
+<tmp.imports>
+
+export interface <tmp.ModelName>FilterBase extends ModelFilterBase<<tmp.ModelName>FilterBase> {
+<tmp.ModelFilterDefinitions>
+}
+
+export interface <tmp.ModelName>Filter extends <tmp.ModelName>FilterBase, ModelFilter {
+  $with?: <tmp.ModelName>With;
+  $sort?: <tmp.ModelName>Sort;
+}
+
+export interface <tmp.ModelName>Values extends ModelValues {
+<tmp.ModelValueOptionalDefinitions>
+}
+
+export interface <tmp.ModelName>Sort extends ModelSort {
+<tmp.ModelSortDefinitions>
+}
+
+export interface <tmp.ModelName>With extends ModelWith {
+<tmp.ModelWithDefinitions>
+}
+
+export type <tmp.ModelName>Property = ModelProperty | <tmp.ModelPropertyDefinitions>;
+
+export class <tmp.ModelName> extends Model<<tmp.ModelName>Sub> implements <tmp.ModelName>Values {
+
+<tmp.ModelValueDefinitions>
+<tmp.ModelRelationsDefinitions>
+
+  static property(property: <tmp.ModelName>Property = null): <tmp.ModelName>Property {
+    return property;
+  }
+
+  static sort(properties: <tmp.ModelName>Sort = {}): <tmp.ModelName>Sort {
+    return properties;
+  }
+
+  static values(values: <tmp.ModelName>Values = {}): <tmp.ModelName>Values {
+    return values;
+  }
+
+  static with($with: <tmp.ModelName>With = {}): <tmp.ModelName>With {
+    return $with;
+  }
+
+  fill(values: <tmp.ModelName>Values) {
+    return super.fill(values);
+  }
+
+  findBy(filter: <tmp.ModelName>Filter = {}) {
+    return super.findBy(filter);
+  }
+
+  // pretty method for findBy
+  find(filter: <tmp.ModelName>Filter = {}) {
+    return this.findBy(filter);
+  }
+
+  getBy(filter: <tmp.ModelName>Filter = {}) {
+    return super.getBy(filter);
+  }
+
+  // pretty method for getBy
+  get(filter: <tmp.ModelName>Filter = {}) {
+    return this.getBy(filter);
+  }
+
+  save() {
+    return super.save();
+  }
+
+  saveWith(withRelations: <tmp.ModelName>With) {
+    return super.saveWith(withRelations);
+  }
+
+  static getRelated(): any {
+    return {
+<tmp.relatedDefinitions>
+    };
+  }
+
+  getRelated() {
+    return <tmp.ModelName>Sub.getRelated();
+  }
+/*
+  assign(relations: {<tmp.relatedAssociations>}) {
+    return super.assign(relations);
+  }
+*/
+  static model(properties?: <tmp.ModelName>Values): <tmp.ModelName>Sub {
+    return super.model(<tmp.ModelName>Sub, properties);
+  }
+
+  static collection(models?: <tmp.ModelName>Values[]): <tmp.ModelName>CollectionSub {
+    return super.collection(<tmp.ModelName>CollectionSub, models);
+  }
+
+  collection(models?: <tmp.ModelName>Values[]): <tmp.ModelName>CollectionSub {
+    return <tmp.ModelName>Sub.collection(models);
+  }
+
+  static filter(filter?: <tmp.ModelName>Filter): <tmp.ModelName>Filter {
+    return super.filter(filter);
+  }
+
+  filter(filter?: <tmp.ModelName>Filter): <tmp.ModelName>Filter {
+    return <tmp.ModelName>Sub.filter(filter);
+  }
+
+  getModelClass(){ return <tmp.ModelName>Sub; }
+
+  static getModelClass(){ return <tmp.ModelName>Sub; }
+
+  getCollectionClass(){ return <tmp.ModelName>CollectionSub; }
+
+  static getCollectionClass(){ return <tmp.ModelName>CollectionSub; }
+
+
+  // asynchronous methods.
+  static findAll(filter: <tmp.ModelName>Filter = {}): Promise<<tmp.ModelName>CollectionSub> {
+    return super.findAll(<tmp.ModelName>Sub, filter);
+  }
+
+  static findOne(filter: <tmp.ModelName>Filter = {}): Promise<<tmp.ModelName>Sub> {
+    return super.findOne(<tmp.ModelName>Sub, filter);
+  }
+
+  // synchronous methods.
+  static getAll(filter: <tmp.ModelName>Filter = {}): <tmp.ModelName>CollectionSub {
+    return super.getAll(<tmp.ModelName>Sub, filter);
+  }
+
+  static getOne(filter: <tmp.ModelName>Filter = {}): <tmp.ModelName>Sub {
+    return super.getOne(<tmp.ModelName>Sub, filter);
+  }
+
+  <tmp.ModelToString>
+
+  static getPropertyDefinitions(): any {
+    return <tmp.propertyMetaDefinitions>;
+  }
+
+  getPropertyDefinitions(): any {
+    return <tmp.ModelName>Sub.getPropertyDefinitions();
+  }
+
+}
+
+export class <tmp.ModelName>Collection extends ModelCollection<<tmp.ModelName>Sub> {
+
+  findBy(filter: <tmp.ModelName>Filter = {}) {
+    return super.findBy(filter);
+  }
+
+  // support Array.find method
+  find(predicate: (value: <tmp.ModelName>Sub, index: number, obj: <tmp.ModelName>CollectionSub) => boolean, thisArg?: any): <tmp.ModelName>Sub | undefined;
+  find(filter?: <tmp.ModelName>Filter): Promise<void>;
+  // pretty method for findBy
+  find(filter: any = {}): any {
+    if(filter instanceof Function){
+      return super.find(filter);
+    }
+    return this.findBy(filter);
+  }
+
+  getBy(filter: <tmp.ModelName>Filter = {}) {
+    return super.getBy(filter);
+  }
+
+  // pretty method for getBy
+  get(filter: <tmp.ModelName>Filter = {}) {
+    return this.getBy(filter);
+  }
+
+  save() {
+    return super.save();
+  }
+
+  saveWith(withRelations: <tmp.ModelName>With) {
+    return super.saveWith(withRelations);
+  }
+
+  getModelClass(){ return <tmp.ModelName>Sub; }
+
+  static getModelClass(){ return <tmp.ModelName>Sub; }
+
+  getCollectionClass(){ return <tmp.ModelName>CollectionSub; }
+
+  static getCollectionClass(){ return <tmp.ModelName>CollectionSub; }
+
+}

@@ -1,0 +1,19 @@
+{
+  "name": "sackets",
+  "version": "1.0.0",
+  "description": "(Typescript) well tested, easy to use and highly extendable ActiveRecord library for browser and node js with code generation",
+  "main": "dist/lib/index.js",
+  "typings": "dist/lib/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/lokijs": "^1.2.30",
+    "@types/node": "^7.0.4",
+    "typescript": "^2.2.1"
+  },
+  "dependencies": {
+    "lokijs": "^1.4.3"
+  }
+}

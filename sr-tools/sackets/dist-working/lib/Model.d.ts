@@ -1,0 +1,38 @@
+import { ModelFilter, ModelWith, ModelValues } from './Filter';
+export declare abstract class Model<T extends Model<T>> {
+    private __meta;
+    private __values;
+    private __relations;
+    getMeta(key: string): any;
+    setMeta(key: string, value: any): void;
+    getValues(): any;
+    getRelations(): any;
+    readonly abstract id: any;
+    protected abstract getModelClass(): any;
+    toRaw(withRelations?: boolean | ModelWith): any;
+    toJson(withRelations?: boolean | ModelWith): string;
+    private getTypeName();
+    fill(values: ModelValues): this;
+    save(options?: any): Promise<void>;
+    saveWith(withRelations: any): Promise<void>;
+    delete(): Promise<{}>;
+    protected getRelation(relationProperty: string, lazyLoad?: boolean): any;
+    protected setRelation(relationProperty: string, relation: any): any;
+    protected getValue(property: string): any;
+    protected setValue(property: string, value: any, processRelated?: boolean): any;
+    protected static getRelated(): any;
+    protected getRelated(): any;
+    protected static getPropertyDefinitions(): any;
+    protected getPropertyDefinitions(): any;
+    static model(modelClass: any, values?: ModelValues): any;
+    static collection(collectionClass: any, models?: ModelValues[]): any;
+    static filter(filter?: ModelFilter): ModelFilter;
+    findBy(filter?: ModelFilter): Promise<boolean>;
+    getBy(filter?: ModelFilter): boolean;
+    findByMethod(method: string, params?: any): Promise<boolean>;
+    saveByMethod(method: string, params?: any): Promise<void>;
+    static findAll(modelClass: any, filter?: ModelFilter): Promise<any>;
+    static findOne(modelClass: any, filter?: ModelFilter): Promise<any>;
+    static getAll(modelClass: any, filter?: ModelFilter): any;
+    static getOne(modelClass: any, filter?: ModelFilter): any;
+}

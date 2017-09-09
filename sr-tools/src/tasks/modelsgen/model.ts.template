@@ -1,0 +1,142 @@
+import {Predicate, ModelFilter, ModelOptions, ModelSort, ModelWith, ModelValues, ModelProperty, SortModifier, Model, ModelCollection} from '../lib/index';
+import {<tmp.ModelName> as <tmp.ModelName>Sub} from '../index';
+import {<tmp.ModelName>Collection as <tmp.ModelName>CollectionSub} from '../index';
+<tmp.imports>
+
+export interface <tmp.ModelName>Filter extends ModelFilter {
+<tmp.ModelFilterDefinitions>
+}
+
+export interface <tmp.ModelName>Values extends ModelValues {
+<tmp.ModelValueOptionalDefinitions>
+}
+
+export interface <tmp.ModelName>Sort extends ModelSort {
+<tmp.ModelSortDefinitions>
+}
+
+export interface <tmp.ModelName>With extends ModelWith {
+<tmp.ModelWithDefinitions>
+}
+
+export interface <tmp.ModelName>Options extends ModelOptions {
+  sort?: <tmp.ModelName>Sort;
+  with?: <tmp.ModelName>With;
+}
+
+export interface <tmp.ModelName>SaveOptions {
+  with?: <tmp.ModelName>With;
+}
+
+export type <tmp.ModelName>Property = ModelProperty | <tmp.ModelPropertyDefinitions>;
+
+export class <tmp.ModelName> extends Model<<tmp.ModelName>Sub> implements <tmp.ModelName>Values {
+
+<tmp.ModelValueDefinitions>
+<tmp.ModelRelationsDefinitions>
+
+  static property(property: <tmp.ModelName>Property = null): <tmp.ModelName>Property {
+    return property;
+  }
+
+  static sort(properties: <tmp.ModelName>Sort = {}): <tmp.ModelName>Sort {
+    return properties;
+  }
+
+  static values(values: <tmp.ModelName>Values = {}): <tmp.ModelName>Values {
+    return values;
+  }
+
+  fill(values: <tmp.ModelName>Values) {
+    return super.fill(values);
+  }
+
+  find(filter: <tmp.ModelName>Filter = {}, options: <tmp.ModelName>Options = {}) {
+    return super.find(filter, options);
+  }
+
+  save(options: <tmp.ModelName>SaveOptions = {}) {
+    return super.save(options);
+  }
+
+  saveWith(withRelations: <tmp.ModelName>With) {
+    return super.saveWith(withRelations);
+  }
+
+  static getRelated(): any {
+    return {
+<tmp.relatedDefinitions>
+    };
+  }
+
+  getRelated() {
+    return <tmp.ModelName>Sub.getRelated();
+  }
+/*
+  assign(relations: {<tmp.relatedAssociations>}) {
+    return super.assign(relations);
+  }
+*/
+  static model(properties?: <tmp.ModelName>Values): <tmp.ModelName>Sub {
+    return super.model(<tmp.ModelName>Sub, properties);
+  }
+
+  static collection(models?: <tmp.ModelName>Values[]): <tmp.ModelName>CollectionSub {
+    return super.collection(<tmp.ModelName>CollectionSub, models);
+  }
+
+  collection(models?: <tmp.ModelName>Values[]): <tmp.ModelName>CollectionSub {
+    return <tmp.ModelName>Sub.collection(models);
+  }
+
+  static filter(filter?: <tmp.ModelName>Filter): <tmp.ModelName>Filter {
+    return super.filter(filter);
+  }
+
+  filter(filter?: <tmp.ModelName>Filter): <tmp.ModelName>Filter {
+    return <tmp.ModelName>Sub.filter(filter);
+  }
+
+  static options(options?: <tmp.ModelName>Options): <tmp.ModelName>Options {
+    return super.options(options);
+  }
+
+  options(options?: <tmp.ModelName>Options): <tmp.ModelName>Options {
+    return <tmp.ModelName>Sub.options(options);
+  }
+
+  getModelClass(){ return <tmp.ModelName>Sub; }
+
+  static getModelClass(){ return <tmp.ModelName>Sub; }
+
+  getCollectionClass(){ return <tmp.ModelName>CollectionSub; }
+
+  static getCollectionClass(){ return <tmp.ModelName>CollectionSub; }
+
+  <tmp.ModelToString>
+
+}
+
+export class <tmp.ModelName>Collection extends ModelCollection<<tmp.ModelName>Sub> {
+
+  find(filter: <tmp.ModelName>Filter = {}, options: <tmp.ModelName>Options = {}): Promise<any> {
+    return super.find(filter, options);
+  }
+
+  save(options: <tmp.ModelName>SaveOptions = {}) {
+    return super.save(options);
+  }
+
+  saveWith(withRelations: <tmp.ModelName>With) {
+    return super.saveWith(withRelations);
+  }
+
+  getModelClass(){ return <tmp.ModelName>Sub; }
+
+  static getModelClass(){ return <tmp.ModelName>Sub; }
+
+  getCollectionClass(){ return <tmp.ModelName>CollectionSub; }
+
+  static getCollectionClass(){ return <tmp.ModelName>CollectionSub; }
+
+}

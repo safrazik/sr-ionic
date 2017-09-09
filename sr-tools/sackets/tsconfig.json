@@ -1,23 +1,19 @@
 {
   "compilerOptions": {
+    "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
-    "declaration": false,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": [
       "dom",
       "es2015"
     ],
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5",
-    "baseUrl": "src",
-    "paths": {
-      "models/base": ["models/base/index"],
-      "models": ["models/index"],
-      "sackets": ["sackets/src/lib/index"]
-    }
+    "outDir": "dist"
   },
   "include": [
     "src/**/*.ts"
@@ -25,8 +21,5 @@
   "exclude": [
     "node_modules"
   ],
-  "compileOnSave": false,
-  "atom": {
-    "rewriteTsconfig": false
-  }
+  "compileOnSave": false
 }

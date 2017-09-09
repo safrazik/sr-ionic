@@ -14,5 +14,17 @@
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
 
+  <ul>
+    <li>List of categories:</li>
+    <li><ion-input type="text" placeholder="Search..." [(ngModel)]="searchText" (ionChange)="search()"></ion-input></li>
+    <li *ngFor="let category of categories">{{ category.name }}
+      <ul>
+        <li *ngFor="let item of category.items">{{ item.name }}</li>
+      </ul>
+    </li>
+  </ul>
+
+  <button ion-button (click)="filterE()">Filter Categories containing "El"</button>
+
   <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>

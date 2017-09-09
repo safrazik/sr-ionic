@@ -1,0 +1,4 @@
+import {<tmp_ModelName> as <tmp_ModelName>Base} from './base/index';
+
+export class <tmp_ModelName> extends <tmp_ModelName>Base {
+}
